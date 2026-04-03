@@ -55,7 +55,7 @@ def menu(*funcoes):
             print("Opção inválida")
 
 
-def carega_arquivo():
+def carrega_arquivo():
     try:
         with open(arq, "r", encoding="utf-8") as arquivo:
             lista = json.load(arquivo)
@@ -74,12 +74,12 @@ def salva_arquivo(lista):
         print("Desculpe, ocorreu um erro desconhecido.")
 
 
-def catastrar_produto(dicionario):
-    lista = carega_arquivo()
-    lista.append(dicionario.copy())
+def cadastrar_produto(dicionario):
+    lista = carrega_arquivo()
+    lista.append(dicionario)
     salva_arquivo(lista)
 
 
 def listar_produto():
-    lista = carega_arquivo()
+    lista = carrega_arquivo()
     return lista
